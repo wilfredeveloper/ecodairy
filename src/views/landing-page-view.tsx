@@ -15,31 +15,10 @@ import {
   CloudRain,
 } from "lucide-react";
 import Image from "next/image";
-import { AutoCarousel } from "@/components/auto-carousel";
 
 export default function LandingPage() {
-  const slides = [
-    {
-      image: "/bg.jpg",
-      title: "Welcome to EcoDairy.AI",
-      description:
-        "Join us in revolutionizing dairy farming with AI-powered insights to boost milk yield and reduce emissions.",
-    },
-    {
-      image: "/bg2.jpg",
-      title: "Eco-Friendly Farming",
-      description:
-        "Optimize your feed strategy for healthier cows and a sustainable future with our data-driven recommendations.",
-    },
-    {
-      image: "/bg.jpg",
-      title: "Intelligent Insights",
-      description:
-        "EcoDairy.AI empowers you to make informed choices, enhancing productivity while supporting the environment.",
-    },
-  ];
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50 xl:px-20">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50">
       <div className="absolute w-full h-[600px] bg-gradient-to-b from-green-100/50 to-transparent top-0 -z-10" />
 
       <header className="container mx-auto px-4 py-8">
@@ -73,7 +52,7 @@ export default function LandingPage() {
               Impact
             </Link>
             <Button variant="outline" className="mr-2">
-              <Link href="/dashboard/login">Login</Link>
+              <Link href="/login">Login</Link>
             </Button>
             <Button>
               <Link href="/subscribe">Start Free Trial</Link>
@@ -96,9 +75,9 @@ export default function LandingPage() {
               production and cattle health.
             </p>
             <div className="flex space-x-4">
-              <Button size="lg" className="bg-green-600 hover:bg-green-700 w-fit">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700">
                 <Link href="/register/farmer">
-                  Start Optimizing Today
+                  Start Optimizing Today{" "}
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -124,7 +103,13 @@ export default function LandingPage() {
           <div className="w-1/2">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-green-200 to-blue-200 rounded-lg blur-lg opacity-75" />
-              <AutoCarousel slides={slides} />
+              <Image
+                src="/api/placeholder/600/400"
+                alt="AI-powered dairy farming"
+                width={600}
+                height={400}
+                className="rounded-lg relative"
+              />
             </div>
           </div>
         </section>
@@ -213,9 +198,9 @@ export default function LandingPage() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-green-200 to-blue-200 rounded-lg blur-lg opacity-75" />
                 <Image
-                  src="/cow-farm.png"
+                  src="/api/placeholder/500/400"
                   alt="Happy Kenyan farmer"
-                  width={800}
+                  width={500}
                   height={400}
                   className="rounded-lg relative"
                 />
@@ -225,7 +210,7 @@ export default function LandingPage() {
                     production. It&apos;s a game-changer for Kenyan farmers.&apos;
                   </p>
                   <p className="text-sm text-gray-600 mt-2">
-                    - Lemashon K., Dairy Farmer in Narok
+                    - John Kamau, Dairy Farmer in Kiambu
                   </p>
                 </div>
               </div>
