@@ -1,18 +1,20 @@
+"use client";
+
 import AppSidebar from "@/components/components-sidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { usePathname } from "next/navigation";
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const isAIAssistantPage = pathname === "/dashboard/ai-assistant";
+
   return (
-    <SidebarProvider>
-      <AppSidebar />
-      <main className="overflow-y-auto px-8 py-16">
-        <SidebarTrigger />
-        {children}
-      </main>
-    </SidebarProvider>
+    <div className="flex h-screen">
+      {!isAIAssistantPage && <AppSidebar />}
+      <main className="flex-1 overflow-y-auto">{children}</main>
+    </div>
   );
 }

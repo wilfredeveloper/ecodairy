@@ -147,9 +147,9 @@ export function DashboardView() {
     setActiveTab("iot");
   };
 
-  if (!user) {
-    return <NotAuthenticatedComponent />;
-  }
+  // if (!user) {
+  //   return <NotAuthenticatedComponent />;
+  // }
 
   return (
     <main className="">

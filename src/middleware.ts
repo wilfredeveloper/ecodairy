@@ -4,7 +4,7 @@ import { jwtVerify } from "jose/jwt/verify";
 
 // Define which routes should be protected and which should be public
 const protectedRoutes = ["/dummy"];
-const publicRoutes = ["/dashboard/login", "/dashboard/register", "/"];
+const publicRoutes = ["/dashboard/login", "/dashboard/register", "/dashboard"];
 
 export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

@@ -14,6 +14,7 @@ import {
   User,
   BrainCircuit,
   ChevronRight,
+  ShoppingCart,
 } from "lucide-react";
 
 import {
@@ -51,6 +52,16 @@ const navItems = [
     href: "/dashboard/record-daily-data",
     icon: Calendar,
   },
+  {
+    name: "AI Assistant",
+    href: "/dashboard/ai-assistant",
+    icon: BrainCircuit,
+  },
+  {
+    name: "Marketplace",
+    href: "/dashboard/marketplace",
+    icon: ShoppingCart,
+  },
 ];
 
 const registerItems = [
@@ -77,7 +88,8 @@ export default function AppSidebar() {
   };
 
   const logout = useUserStore((state) => state.logout);
-  const isAuthenticated = useUserStore((state) => state.isAuthenticated);
+  // const isAuthenticated = useUserStore((state) => state.isAuthenticated);
+  const isAuthenticated = true;
 
   return (
     <Sidebar>
